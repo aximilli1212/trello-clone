@@ -1,4 +1,13 @@
- const appData: AppState = {
+import {createContext} from "react";
+
+type AppStateContextProps = {
+    lists: List[]
+    getTasksByListId(id:string): Task[]
+}
+const AppStateContext = createContext<AppStateContextProps>({} as AppStateContextProps)
+
+
+const appData: AppState = {
     lists: [
         {
             id: '0',

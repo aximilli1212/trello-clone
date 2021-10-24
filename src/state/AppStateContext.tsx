@@ -1,4 +1,5 @@
-import {createContext, useContext, FC, Dispatch, useReducer} from "react";
+import {createContext, useContext, FC, Dispatch} from "react";
+import {useImmerReducer} from "use-immer";
 import {Action} from './actions'
 
 import {
@@ -24,7 +25,7 @@ export const useAppState = ()=>{
 }
 
 export const AppStateProvider: FC = ({ children }) => {
-    const [state, dispatch] = useReducer(appStateReducer, appData)
+    const [state, dispatch] = useImmerReducer(appStateReducer, appData)
     const { lists } = state
 
 

@@ -8,7 +8,7 @@ type NewItemFromProps = {
 }
 
 
-export const NewItemForm = ({onAdd}: NewItemFromProps)=>{
+export const NewItemForm = ({onAdd}: NewItemFromProps) =>{
     const [text, setText] = useState("");
     const inputRef = useFocus();
 
